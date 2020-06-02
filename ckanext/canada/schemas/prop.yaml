@@ -10,8 +10,8 @@ form_languages:
 - fr
 
 sidebar_show_fields:
-- creator
-- keywords
+- creators
+- keywordzzzzzzz
 - subject
 
 detail_show_fields:
