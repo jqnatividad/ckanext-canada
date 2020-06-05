@@ -18,32 +18,15 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{ _('Add to Portal') }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a role="menuitem" tabindex="-1" href="{{ h.url_for('dataset_new') }}">{{ _('Open Data') }}</a></li>
-                        <li class="dropdown-item"><a role="menuitem" tabindex="-1" href="{{ h.url_for('dataset_search', portal_type='prop') }}">{{ _('Suggested Datasets - Update Status') }}</a></li>
-                        <li class="dropdown-item"><a role="menuitem" tabindex="-1" href="{{ h.url_for('info_new') }}">{{ _('Open Information') }}</a></li>
-                        {%- for r_type in [
-                          'ati',
-                          'contracts',
-                          'contractsa',
-                          'hospitalityq',
-                          'travelq',
-                          'travela',
-                          'grants',
-                          'reclassification',
-                          'wrongdoing',
-                          'briefingt',
-                          'consultations',
-                          'inventory',
-                          'dac',
-                          'nap',
-                          'experiment',
-                          'qpnotes',
-                          ] -%}
-                          {# XXX bit of a hack: we "know" that our dataset types have
-                             resource names with the same values #}
-                          <li class="dropdown-item"><a role="menuitem" tabindex="-1" href="{{ h.url_for('recombinant_type', resource_name=r_type)
-                            }}">{{ _(h.recombinant_get_geno(r_type).title) }}</a></li>
-                        {%- endfor -%}
+          <li class="dropdown-item"><a href="{{ h.url_for('dataset_new') }}"
+            ><i class="fa fa-folder-open mrgn-rght-sm"></i>{{ _('Open Data Record') }}</a></li>
+          <li class="dropdown-item"><a href="{{ h.url_for('dataset_search', portal_type='prop') }}"><i class="fa fa-table mrgn-rght-sm"></i>{{ _('Structured Open Data') }}</a></li>
+          <li class="dropdown-item"><a href="{{ h.url_for('dataset_search', portal_type='prop') }}"><i class="fa fa-comment mrgn-rght-sm"></i>{{ _('Suggested Dataset Status') }}</a></li>
+          <li class="dropdown-item"><a href="{{ h.url_for('dataset_search', portal_type='prop') }}"><i class="fa fa-table mrgn-rght-sm"></i>{{ _('Consultations') }}</a></li>
+          <li class="dropdown-item"><a href="{{ h.url_for('info_new') }}"
+            ><i class="fa fa-folder-open mrgn-rght-sm"></i>{{ _('Open Information Asset') }}</a></li>
+          <li class="dropdown-item"><a href="{{ h.url_for('dataset_search', portal_type='prop') }}"><i class="fa fa-folder-open mrgn-rght-sm"></i>{{ _('Briefing packages / Reports Tabled in Parliament') }}</a></li>
+          <li class="dropdown-item"><a href="{{ h.url_for('dataset_search', portal_type='prop') }}"><i class="fa fa-table mrgn-rght-sm"></i>{{ _('Structured Proactive Disclosures / Bill C-58') }}</a></li>
                     </ul>
                 </li>
                 {% endif %}
